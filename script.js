@@ -130,35 +130,3 @@ modifiedProductsObj = products.map((product) =>
 )
 
 console.log(modifiedProductsObj)
-
-// Adding all bonus task code to the console using a single `console.log()`
-console.log(
-    products.forEach((item) => {console.log(item.product)}),
-  
-    '\n' +
-      products.filter((item) => item.product.length > 5),
-  
-    '\n' +
-      products
-        .filter((item) => item.price !== '' && !isNaN(parseFloat(item.price)))
-        .map((item) => ({ ...item, price: parseFloat(item.price) }))
-        .reduce((total, item) => total + item.price, 0),
-  
-    '\n' +
-      products.reduce((accum, item, index) => {
-        if (index === 0) {
-          return item.product;
-        } else if (index === products.length - 1) {
-          return `${accum} and ${item.product}`;
-        } else {
-          return `${accum}, ${item.product}`;
-        }
-      }, ''),
-  
-    '\n' +
-      `Highest: ${highest.name}, Lowest: ${lowest.name}`,
-  
-    '\n' +
-      modifiedProductsObj
-  );
-  
